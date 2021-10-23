@@ -22,3 +22,19 @@ Clojure code examples
 ```
 
 Reads and prints comma-separated words
+
+```clojure
+(ns regex.core)
+
+(def data (slurp "resources/thermopylae.txt"))
+
+(defn -main []
+
+  (let [wfreq  (->> data
+                    (re-seq #"\w+")
+                    frequencies
+                    (sort-by val)
+                    reverse)]
+    (doseq [e wfreq] (println e))))
+```
+Calculate word frequency
