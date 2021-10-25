@@ -114,19 +114,12 @@ The `report.xml` file
 ```clojure
 (ns jasper.core
   (:require [clj-bean.core :refer [defbean]])
-  ;; (:require [clj-bean.core :refer :all])
   (:import
    (net.sf.jasperreports.engine JasperCompileManager
                                 JasperFillManager
                                 JasperExportManager)
    (net.sf.jasperreports.engine.data JRBeanCollectionDataSource)))
 (import java.util.HashMap)
-;; (import 'java.util.ArrayList)
-;; (import 'clj-bean.core)
-
-
-;; (defrecord Car [^Long id ^String name ^Integer price])
-;; (defrecord Car [id name price])
 
 (defbean Car
  [[Long id]
@@ -167,7 +160,6 @@ The `jasper.core.clj` file
   :dependencies [[org.clojure/clojure "1.10.3"], [com.wjoel/clj-bean "0.2.1"],
                  [net.sf.jasperreports/jasperreports "6.17.0"]]
   :repl-options {:init-ns jasper.core}
-  ;; :aot jasper.core/Car
   :main jasper.core/-main)
 ```
 The `com.wjoel/clj-bean` library is needed for creating JavaBean objects that are required by  
