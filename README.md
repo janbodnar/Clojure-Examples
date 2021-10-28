@@ -1,6 +1,24 @@
 # Clojure-Examples
 Clojure code examples
 
+## Lazy seq & doall
+
+```clojure
+(ns doallfun.core)
+
+;; Nothing is printed because map returns a lazy-seq
+(def x (map println [11 22 33]))
+
+;; doall forces the seq to be realized
+(def y (doall (map println [1 2 3])))
+
+(defn -main[]
+  (println (type x))
+  (println (type y))
+
+  (doall x))
+```
+
 ## Regex 
 
 ```clojure
