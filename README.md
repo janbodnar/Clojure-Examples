@@ -57,6 +57,33 @@ Reads and prints comma-separated words
 ```
 Calculate word frequency
 
+## H2 database example
+
+```clojure
+(ns h2ex.core
+  (:require [clojure.java.jdbc :as sql]))
+
+(def db
+  {:dbtype "h2:mem"
+   :dbname "mydb"})
+
+(sql/execute! db ["CREATE TABLE cars(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), price INT)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Audi', 52642)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Mercedes', 57127)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Skoda', 9000)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Volvo', 29000)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Bentley', 350000)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Citroen', 21000)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Hummer', 41400)"])
+(sql/execute! db ["INSERT INTO cars(name, price) VALUES('Volkswagen', 21600)"])
+
+
+(defn -main []
+
+  (sql/query db ["SELECT * FROM cars"]
+             {:row-fn println}))
+ ```            
+
 ## JasperReports example
 
 The example generates a simple PDF report with JasperReports library.
