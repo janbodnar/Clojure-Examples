@@ -81,8 +81,36 @@ Calculate word frequency
 (defn -main []
 
   (sql/query db ["SELECT * FROM cars"]
-             {:row-fn println}))
+             {:row-fn println})
+
+  (prn)
+
+  (println (sql/query db ["SELECT * FROM cars"]
+                      {:row-fn :name}))
+
+  (println (sql/query db ["SELECT * FROM cars"]
+                      {:row-fn :price
+                       :result-set-fn (partial reduce +)}))
+  (prn)
+
+  (println (sql/query db ["SELECT SUM(price) as total FROM cars"]
+                      {:row-fn :total
+                       :result-set-fn first})))
  ```            
+ 
+ ```clojure
+ (defproject h2ex "0.1.0-SNAPSHOT"
+  :description "FIXME: write description"
+  :url "http://example.com/FIXME"
+  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
+            :url "https://www.eclipse.org/legal/epl-2.0/"}
+  :dependencies [[org.clojure/clojure "1.10.0"], 
+                 [com.h2database/h2 "1.4.200"],
+                 [org.clojure/java.jdbc "0.7.12"]]
+  :main "h2ex.core"
+  :repl-options {:init-ns h2ex.core})
+ ```
+ The project file
 
 ## JasperReports example
 
