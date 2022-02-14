@@ -40,6 +40,21 @@
   (println (get resp :body)))  
 ```
 
+## POST request
+
+```clojure
+(ns postreq.main
+  (:require [clj-http.client :as client]))
+
+(def url "https://httpbin.org/post")
+(def data {:name "John Doe" :occupation "gardener"})
+(def resp (client/post url {:form-params data}))
+
+(defn -main
+  []
+  (println (get resp :body)))
+```
+
 ## User agent 
 
 ```clojure
