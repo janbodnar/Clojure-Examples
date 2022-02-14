@@ -4,13 +4,13 @@
 ## Dependencies 
 
 ```
-  :dependencies [[org.clojure/clojure "1.10.3"]
-                 [clj-http "3.12.3"]]
+:dependencies [[org.clojure/clojure "1.10.3"]
+               [clj-http "3.12.3"]]
 ```
 
 ## HEAD request
 
-```
+```clojure
 (ns headreq.main
   (:require [clj-http.client :as client]))
 
@@ -29,7 +29,7 @@
 
 ## GET request
 
-```
+```clojure
 (ns getreq.main
   (:require [clj-http.client :as client]))
 
@@ -40,9 +40,23 @@
   (println (get resp :body)))  
 ```
 
+## User agent 
+
+```clojure
+(ns user_agent.main
+  (:require [clj-http.client :as client]))
+
+(def url "http://webcode.me/ua.php")
+(def resp (client/get url {:headers {"User-Agent" "Clojure program"}}))
+
+(defn -main
+  []
+  (println (get resp :body)))
+ ```
+
 ## Download image
 
-```
+```clojure
 (ns downimg.main
   (:require [clj-http.client :as client])
   (:require [clojure.java.io :as io]))
