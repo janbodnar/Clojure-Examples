@@ -55,6 +55,21 @@
   (println (get resp :body)))
 ```
 
+## Query string
+
+```cloure
+(ns query_str.main
+  (:require [clj-http.client :as client]))
+
+(def url "http://webcode.me/qs.php")
+(def data {"name" "John Doe" "occupation" "gardener"})
+(def resp (client/get url {:accept :json :query-params data}))
+
+(defn -main
+  []
+  (println (get resp :body)))
+```
+
 ## User agent 
 
 ```clojure
