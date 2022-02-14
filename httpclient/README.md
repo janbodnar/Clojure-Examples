@@ -57,7 +57,7 @@
 
 ## Query string
 
-```cloure
+```clojure
 (ns query_str.main
   (:require [clj-http.client :as client]))
 
