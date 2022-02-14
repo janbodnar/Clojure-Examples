@@ -14,15 +14,15 @@
 (ns headreq.main
   (:require [clj-http.client :as client]))
 
-(def headers (client/head "http://webcode.me"))
+(def resp (client/head "http://webcode.me"))
 
 (defn -main
   []
-  (println headers)
+  (println resp)
   (prn "----------------------------")
-  (doseq [[k v] headers] (prn k v))
+  (doseq [[k v] resp] (prn k v))
   (prn "----------------------------")
-  (prn (get headers :headers))
+  (prn (get resp :headers))
   )
  ```
 
