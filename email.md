@@ -12,8 +12,8 @@
                          Message$RecipientType
                          PasswordAuthentication)))
 
-(def user "9c1d45eaf7af5b")
-(def password "ad62926fa75d0f")
+(def user "username")
+(def password "password")
 
 (def props (doto (Properties.)
              (.putAll {"mail.smtp.user" user "mail.smtp.host" "smtp.mailtrap.io"
@@ -51,8 +51,8 @@
                          Message$RecipientType
                          PasswordAuthentication)))
 
-(def user "9c1d45eaf7af5b")
-(def password "ad62926fa75d0f")
+(def user "username")
+(def password "password")
 
 (def props (doto (Properties.)
              (.putAll {"mail.smtp.user" user "mail.smtp.host" "smtp.mailtrap.io"
