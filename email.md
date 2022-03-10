@@ -53,8 +53,8 @@
                          Message$RecipientType
                          PasswordAuthentication)))
 
-(def user "9c1d45eaf7af5b")
-(def password "ad62926fa75d0f")
+(def user "username")
+(def password "password")
 (def port 2525)
 (def host "smtp.mailtrap.io")
 
