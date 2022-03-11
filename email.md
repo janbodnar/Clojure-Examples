@@ -82,3 +82,42 @@
   (.setContent msg "<p>an <em>old falcon</em> in the sky</p>" "text/html; charset=utf-8")
   (Transport/send msg))
 ```
+
+## POP3 example
+
+```clojure
+(ns pop3.core
+  (:import (jakarta.mail Session Folder)))
+
+(def user "9c1d45eaf7af5b")
+(def password "ad62926fa75d0f")
+(def host "pop3.mailtrap.io")
+(def port 9950)
+
+(def props (System/getProperties))
+
+(def session (Session/getDefaultInstance props))
+(def store (.getStore session "pop3"))
+
+(.connect store host port user password)
+(def inbox (.getFolder store "Inbox"))
+(.open inbox Folder/READ_ONLY)
+(def messages (.getMessages inbox))
+
+
+(defn -main []
+
+  (println (count messages))
+
+  (doseq [m messages] (let  [subject (.getSubject m) body (slurp (.getInputStream m))]
+                        (println subject)
+                        (println body)
+                        (prn "---------------------------")))
+
+  (.close inbox true)
+  (.close store))
+```
+
+
+
+
