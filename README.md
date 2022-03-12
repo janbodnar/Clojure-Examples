@@ -12,6 +12,24 @@ Clojure code examples
     (if (> x 0) (prn "x is positive") (prn "x is negative"))))
  ```
 
+## inc/dec
+
+```clojure
+(ns basics.core)
+
+(def nums '(1 2 3 -4 9 6 7))
+
+(defn -main []
+
+  (prn (inc 3))
+  (prn (dec 3))
+  (prn (map inc nums))
+
+  (println "-------------------")
+
+  (doseq [x nums]
+    (prn (inc x))))
+```
 
 ## Concatenate strings
 
