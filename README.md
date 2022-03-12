@@ -1,6 +1,18 @@
 # Clojure-Examples
 Clojure code examples
 
+## if/else 
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (let [x 2]
+    (if (> x 0) (prn "x is positive") (prn "x is negative"))))
+ ```
+
+
 ## Lazy seq & doall
 
 ```clojure
