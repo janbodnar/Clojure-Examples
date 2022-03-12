@@ -12,6 +12,21 @@ Clojure code examples
     (if (> x 0) (prn "x is positive") (prn "x is negative"))))
  ```
 
+## Concatenate strings
+
+```clojure
+(ns basics.core
+  (:require [clojure.string :as string]))
+
+(defn -main []
+
+  (let [w1 "an" w2 "old" w3 "falcon"]
+    (println (string/join " " [w1 w2 w3]))
+    (printf "%s %s %s\n" w1 w2 w3)
+    (println (str w1 " " w2 " " w3))))
+```
+
+
 ## and
 
 ```clojure
