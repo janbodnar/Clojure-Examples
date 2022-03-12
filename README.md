@@ -9,7 +9,7 @@ Clojure code examples
 (defn -main []
 
   (let [x 2]
-    (if (> x 0) (prn "x is positive") (prn "x is negative"))))
+    (if (> x 0) (println "x is positive") (println "x is negative"))))
  ```
 
 ## inc/dec
