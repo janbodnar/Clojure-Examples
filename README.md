@@ -12,7 +12,9 @@ Clojure code examples
     (if (> x 0) (prn "x is positive") (prn "x is negative"))))
  ```
 
+
 ## Concatenate strings
+
 
 ```clojure
 (ns basics.core
@@ -26,6 +28,19 @@ Clojure code examples
     (println (str w1 " " w2 " " w3))))
 ```
 
+## str vs pr-str
+
+`str` is lazy
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (prn (reduce + (range 10)))
+  (prn (str (take 5 (range 10))))
+  (prn (pr-str (take 5 (range 10)))))
+```  
 
 ## and
 
