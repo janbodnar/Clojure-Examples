@@ -12,6 +12,19 @@ Clojure code examples
     (if (> x 0) (prn "x is positive") (prn "x is negative"))))
  ```
 
+## and
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (let [x 3 y 4]
+
+    (if (and (> x 0) (> y 0))
+      (prn "x & y are positive")
+      (prn "it is not true that x & y are positive"))))
+``` 
 
 ## Lazy seq & doall
 
