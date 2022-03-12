@@ -56,6 +56,23 @@ Clojure code examples
       (prn "it is not true that x & y are positive"))))
 ``` 
 
+## min/max/count/...
+
+```clojure
+(ns basics.core)
+
+(def nums '(1 2 3 -4 9 6 7))
+
+(defn -main []
+
+  (prn (apply min nums))
+  (prn (first nums))
+  (prn (last nums))
+  (prn (apply max nums))
+  (prn (reduce + nums))
+  (prn (count nums)))
+```
+
 ## Lazy seq & doall
 
 ```clojure
