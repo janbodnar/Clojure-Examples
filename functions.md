@@ -19,6 +19,8 @@ The `defn` form is an abbreviation of `def` & `fn` forms.
 
 ## Variable # of arguments
 
+Variable number of arguments are created with &.
+
 ```clojure
 (ns basics.core)
 
