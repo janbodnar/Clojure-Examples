@@ -131,6 +131,23 @@ last argument.
     (println (->> w1 (str w2 " ")))))
 ```
 
+---
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (println (reduce + (map (fn [x] (* x x)) (filter odd? (range 10)))))
+
+  (println (->> (range 10)
+                (filter odd?)
+                (map (fn [x] (* x x)))
+                (reduce +))))
+```
+
+Thread macros make the code cleaner & easier to read.  
+
 
 ## Lazy seq & doall
 
