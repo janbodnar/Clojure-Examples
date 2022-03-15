@@ -110,6 +110,28 @@ Clojure code examples
   (prn (count nums)))
 ```
 
+## Thread-first/thread-last macros
+
+The thread-first macro takes its argument and inserts it as the first  
+argument of the next form, then continues inserting the current form  
+as the first argument to the next form, until the end.  
+
+The thread-last macro does the same except it inserts the form as the  
+last argument.  
+
+```clojure
+(ns basics.core)
+
+
+(defn -main []
+
+  (let [w1 "old" w2 "falcon"]
+
+    (println (-> w1 (str " " w2)))
+    (println (->> w1 (str w2 " ")))))
+```
+
+
 ## Lazy seq & doall
 
 ```clojure
