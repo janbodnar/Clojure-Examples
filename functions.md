@@ -17,6 +17,19 @@ The `defn` form is an abbreviation of `def` & `fn` forms.
   (println (greet2 "Paul")))
 ```
 
+## Anonymous functions
+
+Anonymous functions are created with `fn` or `#()`.
+
+This latter is a short syntax which omits the parameter list and  
+names parameters based on their position.  
+
+- % is used for a single parameter
+- %1, %2, %3, etc are used for multiple parameters
+- %& is used for any remaining (variadic) parameters
+
+
+
 ## Variable # of arguments
 
 Variable number of arguments are created with &.
