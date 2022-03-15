@@ -3,6 +3,8 @@
 
 ## defn is def & fn
 
+The `defn` form is an abbreviation of `def` & `fn` forms.  
+
 ```clojure
 (ns basics.core)
 
