@@ -31,6 +31,25 @@ Clojure code examples
     (prn (inc x))))
 ```
 
+## filter
+
+```clojure
+(ns basics.core)
+
+(def nums '(-1 2 -3 4 9 7 0 8 11 22 10 -9))
+
+(defn -main []
+
+  (let [x (filter even? nums)]
+    (println x))
+
+  (let [x (filter #(< % 0) nums)]
+    (println x))
+
+  (let [x (filter (fn [x] (> x 0)) nums)]
+    (println x)))
+``` 
+
 ## Concatenate strings
 
 
