@@ -11,6 +11,23 @@ Clojure code examples
   (let [x 2]
     (if (> x 0) (println "x is positive") (println "x is negative"))))
  ```
+ 
+ ## loops
+ 
+ ```clojure
+ (ns basics.core)
+
+(defn -main []
+  ; calculates sum 1..10
+  (println (loop [sum 0 i 0]
+             (if (> i 10) sum
+                 (recur (+ i sum) (inc i)))))
+  ; creates vector 0..9
+  (println (loop [acc [] i 0]
+             (if (= i 10)
+               acc
+               (recur (conj acc i) (inc i))))))
+ ```
 
 ## inc/dec
 
