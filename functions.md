@@ -1,5 +1,20 @@
 # Functions
 
+
+## defn is def & fn
+
+```clojure
+(ns basics.core)
+
+(defn greet [name] (format "Hello %s!" name))
+(def greet2 (fn [name] (format "Hello %s!" name)))
+
+(defn -main []
+
+  (println (greet "Peter"))
+  (println (greet2 "Paul")))
+```
+
 ## Variable # of arguments
 
 ```clojure
