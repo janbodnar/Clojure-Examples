@@ -14,3 +14,15 @@
 (defn -main []
   (readfile))
 ```
+
+## Read whole file
+
+Reads the whole file in one go with `slurp`.  
+
+```clojure
+(ns slurp.main)
+
+(defn -main
+  []
+  (println (slurp "http://webcode.me")))
+```
