@@ -55,6 +55,16 @@ Reads the whole file in one go with `slurp`.
   (println (nth-line "resources/words.txt" 2)))
 ```  
 
+## Write to file 
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (spit "resources/words2.txt" "sky\nblue\nrock\ncloud"))
+```
+
 ## Append to file
 
 ```clojure
