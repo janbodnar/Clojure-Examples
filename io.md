@@ -1,5 +1,15 @@
 # IO
 
+## Rename file 
+
+```clojure
+(ns basics.core
+  (:require [clojure.java.io :as io]))
+
+(defn -main []
+  (.renameTo (io/file "resources/words.txt") (io/file "resources/words2.txt")))
+```
+
 ## Read file line by line
 
 ```clojure
@@ -27,7 +37,7 @@ Reads the whole file in one go with `slurp`.
   (println (slurp "http://webcode.me")))
 ```
 
-# Read nth line
+## Read nth line
 
 ```clojure
 (ns basics.core
