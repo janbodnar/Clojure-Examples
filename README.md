@@ -60,6 +60,18 @@ Clojure code examples
     (when (= i j) (println))))
 ```
 
+## repeat/repeatedly
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+   ; repeats 5 times a random int
+  (println (repeat 5 (rand-int 11)))
+   ; produces 5 random ints
+  (println (repeatedly 5 #(rand-int 11))))
+```
+
 ## inc/dec
 
 ```clojure
