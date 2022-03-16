@@ -67,9 +67,9 @@ Clojure code examples
 
 (defn -main []
    ; repeats 5 times a random int
-  (println (repeat 5 (rand-int 11)))
+  (println (repeat 5 (rand-int 100)))
    ; produces 5 random ints
-  (println (repeatedly 5 #(rand-int 11))))
+  (println (repeatedly 5 #(rand-int 100))))
 ```
 
 ## inc/dec
