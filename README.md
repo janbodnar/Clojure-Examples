@@ -28,6 +28,18 @@ Clojure code examples
                acc
                (recur (conj acc i) (inc i))))))
  ```
+ 
+ ## Nested loops
+ 
+ ```clojure
+ (ns basics.core)
+
+(defn -main []
+
+  (doseq [i (range 5), j (range (inc i))]
+    (print "*")
+    (when (= i j) (println))))
+```
 
 ## inc/dec
 
