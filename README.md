@@ -29,6 +29,25 @@ Clojure code examples
                (recur (conj acc i) (inc i))))))
  ```
  
+ ## Loops with steps
+ 
+ ```clojure
+ (ns basics.core)
+
+(defn -main []
+  ; print numbers 0..10 with step 2
+  (loop [i 0]
+    (println i)
+    (when (< i 10)
+      (recur (+ 2 i))))
+  
+  (println "----------------------")
+
+  ; print numbers 0..20 with step 3
+  (doseq [i (range 0 20 3)]
+    (println i)))
+```
+ 
  ## Nested loops
  
  ```clojure
