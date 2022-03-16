@@ -54,3 +54,15 @@ Reads the whole file in one go with `slurp`.
   (println (nth-line "resources/words.txt" 1))
   (println (nth-line "resources/words.txt" 2)))
 ```  
+
+## Append to file
+
+```clojure
+(ns basics.core
+  (:require [clojure.java.io :as io]))
+
+(defn -main []
+
+    (with-open [wr (io/writer "resources/words.txt" :append true)]
+      (.write wr "book")))
+```
