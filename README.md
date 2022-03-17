@@ -71,6 +71,21 @@ List comprehensions are created with for.
     (println (sort all))))
 ```
 
+---
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (let [nums (for [x [0 1 2 3 4 5]
+                   :let [y (+ x 3)]
+                   :when (even? y)]
+               y)]
+
+    (println nums)))
+```
+
 ## if/else 
 
 ```clojure
@@ -120,7 +135,7 @@ List comprehensions are created with for.
 
 ```
 
- ## loops
+ ## Loops
  
  ```clojure
  (ns basics.core)
