@@ -53,6 +53,23 @@ Evaluate expression `n` times; returns `nil`
     (println [e1 e2])))
 ```
 
+## list comprehensions
+
+List comprehensions are created with for.  
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (let [odds (for [x (range 10) :when (odd? x)] x)
+        evens (for [x (range 10) :when (even? x)] x)
+        all (concat evens odds)]
+
+    (println evens)
+    (println odds)
+    (println (sort all))))
+```
 
 ## if/else 
 
