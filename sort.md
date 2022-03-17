@@ -21,6 +21,21 @@
   (println (reverse (sort words))))
 ```
 
+## Sort words ci
+
+```clojure
+(ns basics.core
+  (:require [clojure.string :as str]))
+
+(def words ["sky" "Sun" "Albert" "cloud" "by" "Earth" "else"
+            "atom" "brown" "a" "den" "kite" "town"])
+
+(defn -main []
+
+  (println (sort words))
+  (println (sort-by (comp str/lower-case) words)))
+```
+
 ## Sort ints lex. & words by length
 
 ```clojure 
@@ -83,3 +98,28 @@
   (println (sort desc words))
   (println (sort bylendesc words)))
 ```
+
+## Sort by multiple fields
+
+```clojure
+(ns basics.core)
+
+(def users [{:fname "Robin" :lname  "Brown" :salary 2300}
+            {:fname "Janet" :lname  "Doe" :salary 980}
+            {:fname "John" :lname  "Doe" :salary 1230}
+            {:fname "Vivien" :lname  "Doe" :salary 1010}
+            {:fname "Amy" :lname  "Doe" :salary 1250}
+            {:fname "Joe" :lname  "Draker" :salary 1190}
+            {:fname "Lucy" :lname  "Novak" :salary 670}
+            {:fname "Albert" :lname  "Novak" :salary 1930}
+            {:fname "Ken" :lname  "Novak" :salary 2990}
+            {:fname "Ben" :lname  "Walter" :salary 2050}])
+
+(defn -main []
+  ; sort by last name asc & salary asc
+  (doseq [u (sort-by (juxt :lname :salary) users)] (println u))
+  (println "-------------------------------")
+  ; sort by last name asc & salary desc
+  (doseq [u (sort-by (juxt :lname (comp - :salary)) users)] (println u)))
+```
+
