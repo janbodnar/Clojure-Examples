@@ -44,7 +44,7 @@ Variable number of arguments are created with &.
   (f 1 2 3 4 5 6))
 ```
 
-## Multi-variadic functions
+## Multi-arity functions
 
 Functions can take various numbers of arguments.
 
