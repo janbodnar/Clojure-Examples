@@ -1,4 +1,4 @@
-# Sortign
+# Sorting
 
 
 # Integers & words
