@@ -43,3 +43,22 @@ Variable number of arguments are created with &.
 (defn -main []
   (f 1 2 3 4 5 6))
 ```
+
+## Multi-variadic functions
+
+Functions can take various numbers of arguments.
+
+```clojure
+(ns basics.core)
+
+(defn hello
+  ([] "Hello there!")
+  ([name] (format "Hello %s!" name))
+  ([firstname lastname] (format "Hello %s %s!" firstname lastname)))
+
+(defn -main []
+
+  (println (hello "John"))
+  (println (hello "John" "Doe"))
+  (println (hello)))
+```
