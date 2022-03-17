@@ -32,7 +32,7 @@ names parameters based on their position.
 
 ## Variable # of arguments
 
-Variable number of arguments are created with &.
+The rest of the arguments are stored in form after &.
 
 ```clojure
 (ns basics.core)
