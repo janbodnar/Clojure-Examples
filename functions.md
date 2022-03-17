@@ -28,7 +28,18 @@ names parameters based on their position.
 - %1, %2, %3, etc are used for multiple parameters
 - %& is used for any remaining (variadic) parameters
 
+## map function
 
+```clojure
+(ns basics.core)
+
+(def nums [1 2 3 4 5 6])
+
+(defn -main []
+
+  (println (map #(* % 2) nums))
+  (println (map (fn [x] (* x  3)) nums)))
+```
 
 ## Variable # of arguments
 
