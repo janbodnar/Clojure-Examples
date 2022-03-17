@@ -11,7 +11,24 @@ Clojure code examples
   (let [x 2]
     (if (> x 0) (println "x is positive") (println "x is negative"))))
  ```
- 
+
+## Multiple conditions with cond
+
+```clojure
+(ns basics.core)
+
+(def r (+ -5 (rand-int 10)))
+
+(defn -main []
+
+  (println (do (println r)
+               (cond
+                 (< r 0) "the value is negative"
+                 (> r 0) "the value is positive"
+                 (== r 0) "the value is zero"))))
+
+```
+
  ## loops
  
  ```clojure
@@ -71,6 +88,27 @@ Clojure code examples
    ; produces 5 random ints
   (println (repeatedly 5 #(rand-int 100))))
 ```
+
+## do statement
+
+`do` combines single expressions. Functions and let have implicit  
+do statements.
+
+```clojure
+(ns basics.core)
+
+(def n 5)
+
+(defn -main []
+
+  (let [r (if (even? n)
+            (do (println "even")
+                true)
+            (do (println "odd")
+                false))]
+    (println r)))
+```
+
 
 ## inc/dec
 
