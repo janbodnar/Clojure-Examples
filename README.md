@@ -1,6 +1,59 @@
 # Clojure-Examples
 Clojure code examples
 
+## dotimes
+
+iteration with side effects  
+Evaluate expression `n` times; returns `nil`  
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (dotimes [_ 5] (println "falcon"))
+  (dotimes [x 5] (println (* x x))))
+```
+
+## doseq
+
+- iteration with side effects
+- iterates over a sequence
+- if a lazy sequence, forces evaluation
+- returns nil
+
+```clojure
+(ns basics.core)
+
+(def nums [1 2 3 4 5])
+
+(defn -main []
+
+  (doseq [n nums]
+    (println n))
+
+  (doseq [w '("falcon" "falcon" "falcon" "falcon")]
+    (println w))
+
+  (doseq [n (range 10)]
+    (println n)))
+```
+
+---
+
+```clojure
+(ns basics.core)
+
+(def ws ["a" "b" "c"])
+(def vs [1 2 3])
+
+(defn -main []
+
+  (doseq [e1 ws e2 vs]
+    (println [e1 e2])))
+```
+
+
 ## if/else 
 
 ```clojure
