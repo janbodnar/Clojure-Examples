@@ -101,8 +101,8 @@
 
 ---
 
-Compare first by lenght, if elements have same lenght then by  
-alphabetically in ci manner.  
+Compare first by lenght, if elements have same length then    
+alphabetically/ci.  
 
 ```clojure
 (ns basics.core)
