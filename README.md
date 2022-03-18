@@ -21,6 +21,29 @@ Clojure code examples
   (doseq [e args] (println e)))
 ```
 
+## Getting elements of a vector
+
+```clojure
+(ns basics.core)
+
+(def nums [1 2 3 4 5 6 7 8])
+
+(defn -main []
+
+  (println (first nums))
+  (println (second nums))
+  (println (nth nums 5))
+  (println (last nums))
+  (println (butlast nums))
+  (println (reverse nums))
+  (println (first (reverse nums)))
+  (println (last (butlast nums)))
+  (println (take-last 4 nums))
+  (println (take-last 1 nums))
+  (println (take-last 0 nums))
+  (println (drop-last 3 nums)))
+```
+
 ## dotimes
 
 iteration with side effects  
