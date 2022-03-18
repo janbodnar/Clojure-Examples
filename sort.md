@@ -99,6 +99,27 @@
   (println (sort bylendesc words)))
 ```
 
+---
+
+Compare first by lenght, if elements have same lenght then by  
+alphabetically in ci manner.  
+
+```clojure
+(ns basics.core)
+
+(defn cmp [s1 s2]
+  (let [len1 (count s1), len2 (count s2)]
+    (if (= len1 len2)
+      (compare (.toLowerCase s1) (.toLowerCase s2))
+      (- len2 len1))))
+
+(def words ["sky" "Sun" "Albert" "cloud" "by" "Earth" "else"
+            "atom" "brown" "a" "den" "kite" "town"])
+
+(defn -main []
+
+  (println (sort cmp words)))
+```
 ## Sort by multiple fields
 
 ```clojure
