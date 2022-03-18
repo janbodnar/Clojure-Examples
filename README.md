@@ -1,6 +1,26 @@
 # Clojure-Examples
 Clojure code examples
 
+## Command line arguments
+
+```clojure
+(ns basics.core)
+
+(def args2 *command-line-args*)
+
+(defn -main [& args]
+
+  (println args2)
+  (println args)
+
+  (println (first args))
+  (println (second args))
+  (println (last args))
+  (println (butlast args))
+
+  (doseq [e args] (println e)))
+```
+
 ## dotimes
 
 iteration with side effects  
