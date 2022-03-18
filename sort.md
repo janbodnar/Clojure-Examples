@@ -101,7 +101,7 @@
 
 ---
 
-Compare first by lenght, if elements have same length then    
+Compare first by length, if elements have same length then    
 alphabetically/ci.  
 
 ```clojure
@@ -118,7 +118,8 @@ alphabetically/ci.
 
 (defn -main []
 
-  (println (sort cmp words)))
+  (println (sort cmp words))
+  (println (sort-by (juxt (comp - count) #(.toLowerCase %)) words)))
 ```
 ## Sort by multiple fields
 
