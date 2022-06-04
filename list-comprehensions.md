@@ -2,7 +2,7 @@
 
 List comprehensions are created with for.  
 
-# Simple
+## Simple
 
 ```clojure
 (ns basics.core)
@@ -31,7 +31,7 @@ List comprehensions are created with for.
     (println data)))
 ```
 
-# :let and :when
+## :let and :when
 
 ```clojure
 (ns basics.core)
@@ -62,7 +62,7 @@ List comprehensions are created with for.
 ```
 
 
-# :when and :while
+## :when and :while
 
 ```clojure
 (ns basics.core)
