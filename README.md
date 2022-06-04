@@ -111,6 +111,19 @@ Evaluate expression `n` times; returns `nil`
     (println [e1 e2])))
 ```
 
+## get random element
+
+```clojure
+(ns rndel.core (:gen-class))
+
+(def nums '(1, 2, 3, 4, 5, 6))
+
+(defn -main []
+
+  (println (rand-nth nums))
+  )
+```
+
 ## repeat/repeatedly
 
 ```clojure
