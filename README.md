@@ -21,6 +21,21 @@ Clojure code examples
   (doseq [e args] (println e)))
 ```
 
+## Download image
+
+```clojure
+(ns down-img.core
+  (:require [clojure.java.io :as io]))
+
+(defn -main
+  []
+  (let [url "http://webcode.me/favicon.ico" file "favicon.ico"]
+  (with-open [in (io/input-stream url)
+              out (io/output-stream file)]
+    (io/copy in out))))
+```
+
+
 ## Getting elements of a vector
 
 ```clojure
