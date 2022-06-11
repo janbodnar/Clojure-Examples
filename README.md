@@ -21,6 +21,18 @@ Clojure code examples
   (doseq [e args] (println e)))
 ```
 
+## Format string
+
+```clojure
+(ns format.core)
+
+(defn -main
+  []
+  (let [name "John Doe" occupation "gardener"]
+
+    (println (format "%s is a %s" name occupation))))
+```
+
 ## Download image
 
 ```clojure
