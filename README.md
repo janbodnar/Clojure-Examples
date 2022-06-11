@@ -183,6 +183,23 @@ do statements.
 ---
 
 ```clojure
+(ns format.core)
+
+(import java.text.BreakIterator)
+
+(defn tokenize [text]
+  (let [bi (BreakIterator/getCharacterInstance)]
+    (.setText bi text)
+    (loop [b (.first bi) toks []]
+      (let [e (.next bi)]
+        (if (= e (BreakIterator/DONE))
+          toks
+          (recur e (conj toks (subs text b e))))))))
+
+(defn -main
+  []
+  (doseq [e (tokenize "🐜🐬🐄🐘🦂🐫🐑🦍🐯🐞")]
+    (println e)))
 ```
 
 ## inc/dec
