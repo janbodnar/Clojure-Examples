@@ -357,6 +357,24 @@ Thread macros make the code cleaner & easier to read.
   (doall x))
 ```
 
+## Run programs 
+
+```clojure
+(ns format.core)
+
+(require '[clojure.java.shell :as shell])
+
+(defn -main
+  []
+
+  (println (:out (shell/sh "ls")))
+  (println (:out (shell/sh "cowsay" "Hello there!")))
+  (println (:out (shell/sh "pwd")))
+
+  (System/exit 0))
+  ```
+
+
 ## Regex 
 
 ```clojure
