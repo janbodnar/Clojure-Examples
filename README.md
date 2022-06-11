@@ -338,6 +338,32 @@ last argument.
 
 Thread macros make the code cleaner & easier to read.  
 
+---
+
+With `macroexpand`, we can see how the macro will be executed.  
+
+```clojure
+(ns format.core)
+
+(defn -main
+  []
+
+  (println (macroexpand '(-> 4
+                             (/ 12)
+                             (- 5)
+                             (* 3)
+                             (+ 5)
+                             (- 25))))
+
+  (println (macroexpand '(->> 4
+                              (/ 12)
+                              (- 5)
+                              (* 3)
+                              (+ 5)
+                              (- 25))))
+
+```
+
 
 ## Lazy seq & doall
 
