@@ -32,7 +32,18 @@ Clojure code examples
 
     (println (format "%s is a %s" name occupation))))
 ```
+## Get webpage
 
+```clojure
+(ns format.core)
+
+(defn -main
+  []
+
+  (let [url "http://webcode.me"]
+
+    (println (slurp url))))
+```
 
 ## Download image
 
