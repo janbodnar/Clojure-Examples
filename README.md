@@ -1,6 +1,19 @@
 # Clojure-Examples
 Clojure code examples
 
+## Read console input
+
+```clojure
+(ns basics.core)
+
+(defn -main []
+
+  (print "Enter your name: ")
+  (flush)
+  (let [name (read-line)]
+    (println (format "Hello %s!" name))))
+```
+
 ## Command line arguments
 
 ```clojure
