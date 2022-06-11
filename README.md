@@ -33,6 +33,7 @@ Clojure code examples
     (println (format "%s is a %s" name occupation))))
 ```
 
+
 ## Download image
 
 ```clojure
@@ -167,7 +168,22 @@ do statements.
                 false))]
     (println r)))
 ```
+## Iterate over runes
 
+```clojure
+(ns format.core)
+
+(defn -main
+  []
+
+  (doseq [e (re-seq #"."  "🐜🐬🐄🐘🦂🐫🐑🦍🐯🐞")]
+    (println e)))
+```
+
+---
+
+```clojure
+```
 
 ## inc/dec
 
