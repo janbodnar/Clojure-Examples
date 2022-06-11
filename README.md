@@ -171,7 +171,7 @@ do statements.
 ## Iterate over runes
 
 ```clojure
-(ns format.core)
+(ns basics.core)
 
 (defn -main
   []
@@ -183,7 +183,7 @@ do statements.
 ---
 
 ```clojure
-(ns format.core)
+(ns basics.core)
 
 (import java.text.BreakIterator)
 
