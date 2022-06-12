@@ -69,6 +69,17 @@ Reads the whole file in one go with `slurp`.
   (println (nth-line "resources/words.txt" 2)))
 ```  
 
+## Copy file
+
+```clojure
+(ns strings.core
+  (:require [clojure.java.io :as io]))
+
+(defn -main []
+
+  (io/copy (io/file "resources/words.txt") (io/file "resources/words2.txt")))
+```
+
 ## Write to file 
 
 ```clojure
