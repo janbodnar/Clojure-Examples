@@ -45,6 +45,27 @@ Clojure code examples
 
     (println (format "%s is a %s" name occupation))))
 ```
+
+## Ranges
+
+```clojure
+(ns ranges.core)
+
+(defn -main []
+  
+  (println (range 10))
+  (println (range 10 20))
+  (println (range 1 20 3))
+  (println (range 10 0 -1))
+
+  (println "------------------------")
+  
+  (println (partition 5 (range 1 20)))
+  (println (reduce + (range 5 15)))
+
+  (println (map char (range (int \a) (int \z)))))
+ ```
+
 ## Get webpage
 
 ```clojure
