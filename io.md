@@ -1,5 +1,19 @@
 # IO
 
+## Create new file
+
+```clojure
+(ns strings.core 
+  (:require [clojure.java.io :as io]))
+
+(import '(java.io File))
+
+(defn -main []
+
+  (.createNewFile (io/file "resources/words.txt"))
+  (.createNewFile (File. "resources/words2.txt")))
+```
+
 ## Rename file 
 
 ```clojure
