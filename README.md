@@ -37,7 +37,7 @@ Clojure code examples
 ## Format string
 
 ```clojure
-(ns format.core)
+(ns basics.core)
 
 (defn -main
   []
@@ -49,7 +49,7 @@ Clojure code examples
 ## Ranges
 
 ```clojure
-(ns ranges.core)
+(ns basics.core)
 
 (defn -main []
   
@@ -82,7 +82,7 @@ Clojure code examples
 ## Download image
 
 ```clojure
-(ns down-img.core
+(ns basics.core
   (:require [clojure.java.io :as io]))
 
 (defn -main
@@ -172,7 +172,7 @@ Evaluate expression `n` times; returns `nil`
 ## get random element
 
 ```clojure
-(ns rndel.core (:gen-class))
+(ns basics.core (:gen-class))
 
 (def nums '(1, 2, 3, 4, 5, 6))
 
