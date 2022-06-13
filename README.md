@@ -110,7 +110,7 @@ Clojure code examples
 ## Pretty-printing
 
 ```clojure
-(ns pretty-print.core
+(ns basics.core
   (:require [clojure.pprint :as pp]))
 
 (def users  [{:first-name  "Robert" :last-name  "Novak" :salary  1770}
@@ -124,9 +124,10 @@ Clojure code examples
              {:first-name  "Peter" :last-name  "Novak" :salary  990}
              {:first-name  "Albert" :last-name  "Novak" :salary  1930}])
 
+
 (defn -main
   []
-
+  (pp/print-table users)
   (pp/pprint users)
   (println users))
 ```
@@ -340,7 +341,7 @@ do statements.
 ## Shuffle cards
 
 ```clojure
-(ns shufflecards.core
+(ns basics.core
   (:require [clojure.string :as str]))
 
 (def cards ["🂡" "🂱" "🃁" "🃑"
@@ -452,7 +453,7 @@ Thread macros make the code cleaner & easier to read.
 With `macroexpand`, we can see how the macro will be executed.  
 
 ```clojure
-(ns format.core)
+(ns basics.core)
 
 (defn -main
   []
@@ -495,7 +496,7 @@ With `macroexpand`, we can see how the macro will be executed.
 ## Run programs 
 
 ```clojure
-(ns format.core)
+(ns basics.core)
 
 (require '[clojure.java.shell :as shell])
 
