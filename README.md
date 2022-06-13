@@ -79,6 +79,20 @@ Clojure code examples
     (println (slurp url))))
 ```
 
+## Get title of webpage
+
+```clojure
+(ns get-title.core)
+
+(defn -main []
+
+  (let [url "http://webcode.me"
+        content (slurp url)]
+
+    (println (re-find #"<title>.*</title>" content))
+    (println (second (re-find #"<title>(.*)</title>" content)))))
+```
+
 ## Download image
 
 ```clojure
