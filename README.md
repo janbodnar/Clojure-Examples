@@ -107,6 +107,29 @@ Clojure code examples
     (io/copy in out))))
 ```
 
+## Pretty-printing
+
+```clojure
+(ns pretty-print.core
+  (:require [clojure.pprint :as pp]))
+
+(def users  [{:first-name  "Robert" :last-name  "Novak" :salary  1770}
+             {:first-name  "John" :last-name  "Doe" :salary  1230}
+             {:first-name  "Lucy" :last-name  "Novak" :salary  670}
+             {:first-name  "Ben" :last-name  "Walter" :salary  2050}
+             {:first-name  "Robin" :last-name  "Brown" :salary  2300}
+             {:first-name  "Amy" :last-name  "Doe" :salary  1250}
+             {:first-name  "Joe" :last-name  "Draker" :salary  1190}
+             {:first-name  "Janet" :last-name  "Doe" :salary  980}
+             {:first-name  "Peter" :last-name  "Novak" :salary  990}
+             {:first-name  "Albert" :last-name  "Novak" :salary  1930}])
+
+(defn -main
+  []
+
+  (pp/pprint users)
+  (println users))
+```
 
 ## Getting elements of a vector
 
