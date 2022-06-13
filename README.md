@@ -96,13 +96,8 @@ Clojure code examples
 ## Get title of webpage with JSoup
 
 ```clojure
-(ns jsoup.core
+(ns basics.core
   (:import (org.jsoup Jsoup)))
-
-;; (def HTML (str "<html><head><title>Website title</title></head>
-;;                 <body><p>Sample paragraph number 1 </p>
-;;                       <p>Sample paragraph number 2</p>
-;;                 </body></html>"))
 
 (defn -main []
   (let [doc (.get (Jsoup/connect "http://webcode.me"))
